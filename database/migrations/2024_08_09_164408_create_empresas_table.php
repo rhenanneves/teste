@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp('descricao_empresa');
             $table->timestamp('email_verifed_at')->nullable();
             $table->string('password');
-            $table->remeberToken();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

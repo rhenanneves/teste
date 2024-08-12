@@ -4,6 +4,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 
+//rota para exibir a home
+Route::get('/home',function () {return view ('home');});
+
 
 // Rota para exibir o formulário de login
 Route::get('/login', [UsuarioController::class, 'showLoginForm'])->
@@ -16,7 +19,7 @@ name('usuarios.login');
 
 
 // Rota para exibir o formulário de registro
-Route::get('/registro', [UsuarioController::class, 'showRegisterForm'])->
+Route::get('/registro', [UsuarioController::class, 'showRegistroForm'])->
 name('usuarios.registro');
 
 
@@ -32,5 +35,10 @@ name('usuarios.logout');
 
 // Rota para o dashboard, protegida por autenticação
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('usuarios.dashboard');
 })->middleware('auth')->name('dashboard');
+
+// // Rota para o dashboard, protegida por autenticação
+// Route::get('/', function () {
+//     return view('layouts.app');
+// });
